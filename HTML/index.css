@@ -1,0 +1,275 @@
+@font-face {
+    font-family: Dosis;
+    src: url(assets/font/Dosis/Dosis-VariableFont_wght.ttf) format("truetype");
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(assets/font/Montserrat_Alternates/MontserratAlternates-Medium.ttf) format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+.titulo {
+    font-family: Dosis;
+    font-weight: bold;
+}
+
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #464646
+    
+}
+
+a {
+    text-decoration: none;
+    color: #464646
+}
+
+.fixedHeader {
+    position: fixed;
+    font-size: 24px;
+    top: 0;
+    height: 56px;
+    z-index: 1000;
+    background-color: #A39AFF;
+    color: #F2F86F;
+    /* width: 1920px; */
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7rem 0 3rem 0; 
+    padding: 0 20rem 0 20rem;
+    position: relative;
+    width: 100%;
+}
+
+.logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.logo {
+    width: 150px;
+}
+
+.logo-container a img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: changeLogo 5s infinite; /* Change logo every second */
+    opacity: 0;
+}
+.logo-container a img:nth-child(1) {
+    animation-delay: 0s; /* First image */
+}
+.logo-container a img:nth-child(2) {
+    animation-delay: 1s; /* Second image */
+}
+.logo-container a img:nth-child(3) {
+    animation-delay: 2s; /* Third image */
+}
+.logo-container a img:nth-child(4) {
+    animation-delay: 3s; /* Third image */
+}
+.logo-container a img:nth-child(5) {
+    animation-delay: 4s; /* Third image */
+}
+
+@keyframes changeLogo {
+    0%, 20% {
+      opacity: 1; /* Show the image */
+    }
+    21%, 100% {
+      opacity: 0; /* Hide the image */
+    }
+}
+
+.navbar-buttons{
+    display: flex;
+    gap: 6rem; /* Spacing between buttons */
+    margin: 0 10rem 0 10rem;
+}
+
+.navbar-buttons a {
+    font-size: 16px;
+    width: 7rem;
+}
+
+.navbar a:hover {
+    color: #bababa;
+}
+
+@media (max-width: 590px) {
+    .navbar a {
+        display: none;
+    }
+    /* .navbar {
+        display: grid;
+    } */
+}
+
+
+
+
+/* Body */
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin: 0 4rem 0 4rem; */
+    width: 100%;
+}
+
+/* What is Bula */
+.what-is-bula {
+    display: flex;
+    justify-content: center;
+    /* gap: 200px; */
+}
+
+.what-is-bula .description{
+    
+    width: 51rem;
+    min-width: 51rem;
+   
+    padding: 8rem 8rem;
+}
+
+.what-is-bula .description-image img{
+    width: 51rem;
+    min-width: 30rem;
+}
+
+.what-is-bula .description h1{
+    font-family: Dosis;
+    color: #FF76FF;
+    font-weight: bold;
+}
+.what-is-bula .description p{
+    padding: 1rem 0;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Services */
+.services {
+    display: flex;
+    flex-direction: column;
+}
+
+.inverted-svg {
+    rotate: 180deg;
+}
+
+.services .container h1{
+    font-family: Dosis;
+    font-size: 72px;
+    margin: 3rem 0 6rem 0;
+    color: #F2F86F;
+    font-weight: bold;
+}
+
+.services .container {
+    background-color: #FF7A69;
+    justify-items: center;
+}
+.services .cards {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin: 0 0 10rem 0;
+}
+
+.card {
+    background-color: #fff;
+    height: 726px;
+    width: 509px;
+    border-radius: 80px;
+}
+
+/* What we do */
+.what-we-do {
+    display: flex;
+    justify-content: center;
+    /* gap: 200px; */
+}
+
+.what-we-do .description{
+    
+    width: 51rem;
+    min-width: 51rem;
+   
+    padding: 8rem 8rem;
+}
+
+.what-we-do .description-image img{
+    width: 40rem;
+    min-width: 30rem;
+}
+
+.what-we-do .description h1{
+    font-family: Dosis;
+    color: #FF76FF;
+    text-align: right;
+    font-weight: bold;
+}
+.what-we-do .description p{
+    padding: 1rem 0;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+footer img{
+    /* position: absolute; */
+    height: 85.1rem;
+    /* left: -4rem; */
+}
+
+footer h1 {
+    font-family: Dosis;
+    line-height: 4rem;
+    text-align: center;
+    position: absolute;
+    top: 15%;
+    left: 51%;
+    color: #F2F86F;
+    font-size: 70px;
+    font-weight: bold;
+    animation: colorChange 4s infinite;
+}
+
+@keyframes colorChange {
+    0% { color: #A39AFF; }
+    25% { color: #F2F86F; }
+    50% { color: #FF76FF; }
+    75% { color: #B3FFF6; }
+    100% { color: #FF7A69; }
+}
