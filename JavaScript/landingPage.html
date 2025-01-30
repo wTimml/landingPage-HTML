@@ -50,14 +50,19 @@ CINZA #464646 -->
             height: 30px;
             /* visibility: hidden; */
         }
+        .fixed-nav-custom div a {
+            width: 250px;
+        }
 
         .custom-navbar-bg {
             padding: 15px 0 0 0;
-            background-color: rgb(163, 154, 255,0.8)
+            background-color: #f9f9f9;
+            /*background-color: rgb(163, 154, 255,0.8)*/
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
         }
         
         .nav-item a {
-            color: #fff;
+            color: #464646;
         }
 
         .nav-custom {
@@ -119,11 +124,11 @@ CINZA #464646 -->
             }
 
             .text-justify {
-                text-align: left;
+                /* text-align: left; */
             }
             .text-justify-b {
                 
-                text-align: right;
+                /* text-align: right; */
             }
         }
         @media (max-width: 1180px) {
@@ -158,8 +163,8 @@ CINZA #464646 -->
 <body>
     <nav class="fixed-top fixed-nav-custom fs-5">
         <div class="position-absolute top-50 start-50 translate-middle">
-            <a class="nav-link" href="https://www.behance.net/barbararichards2" target="_blank">
-                Contact Us!
+            <a class="nav-link title-dosis" href="https://www.behance.net/barbararichards2" target="_blank">
+                <b>Let’s Make a Bula? Contact Us!</b>
             </a>
         </div>
     </nav>
@@ -205,12 +210,12 @@ CINZA #464646 -->
     <!-- What is -->
     <div id="what-is" class="container mt-5 text-justified">
         <div class="row align-middle">
-            <div class="col ps-5 pe-5 pt-5">
+            <div class="col ">
                 <h1 class="mb-4 mt-5 title-dosis" style="color: #FF76FF;"><b>What is Bula</b></h1>
                 <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. A repellendus facere, ipsam laudantium quas blanditiis in praesentium provident impedit minus dolore dolorem ea voluptate molestiae perspiciatis, dignissimos aperiam esse? Itaque?</p>
             </div>
-            <div class="col ps-5 pe-5 text-center">
-              <img src="/images/Prancheta 6.png" alt="Barbara Richards" width="100%"/>
+            <div id="div-bah" class="col ps-5 pe-5 text-center">
+              <img id="bah" src="/images/Prancheta 6.png" alt="Barbara Richards" width="100%"/>
             </div>
         </div>
     </div>
@@ -265,10 +270,10 @@ CINZA #464646 -->
     <!-- What we do -->
     <div id="what-we" class="container mt-5 text-justified">
         <div class="row align-middle">
-            <div class="col ps-5 pe-5 text-center">
+            <div id="what-we-div-img" class="col ps-5 pe-5 text-center">
                 <img src="/images/Prancheta 7.png" alt="Barbara Richards" width="100%"/>
             </div>
-            <div class="col ps-5 pe-5 pt-5 mt-5">
+            <div id="what-we-div-txt" class="col ps-5 pe-5 pt-5 mt-5">
                 <h1 class="text-end mb-4 mt-5 title-dosis" style="color: #A39AFF;"><b>What we do?</b></h1>
                 <p class="text-justify text-justify-b">Lorem ipsum dolor sit amet consectetur adipisicing elit. A repellendus facere, ipsam laudantium quas blanditiis in praesentium provident impedit minus dolore dolorem ea voluptate molestiae perspiciatis, dignissimos aperiam esse? Itaque?</p>
             </div>
@@ -276,7 +281,7 @@ CINZA #464646 -->
     </div>
 
     <!-- Projects -->
-    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide mt-5">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -410,23 +415,34 @@ CINZA #464646 -->
 
             // Change SVG Viewbox on maxwidth
             function updateViewBox() {
-            const maxWidth = 770; // Breakpoint for max width
-            const maxWidth2 = 300; // Breakpoint for max width
-            const $svg = $("#svg1");
-            const $svg2 = $("#svg2");
+                const maxWidth3 = 1000; // Breakpoint for bah image max width
+                const maxWidth = 770; // Breakpoint for max width
+                const maxWidth4 = 448; // Breakpoint for bah image max width
+                const maxWidth2 = 300; // Breakpoint for max width
+                const $svg = $("#svg1");
+                const $svg2 = $("#svg2");
 
-            if ($(window).width() <= maxWidth2) {
-                // Change viewBox for smaller screens
-                $svg.attr("viewBox", "0 0 250 45");
-                $svg2.attr("viewBox", "0 0 250 44");
-            } else if ($(window).width() <= maxWidth) {
-                $svg.attr("viewBox", "0 0 500 45");
-                $svg2.attr("viewBox", "0 0 500 46");
-            } else {
-                // Reset viewBox for larger screens
-                $svg.attr("viewBox", "0 0 1200 45");
-                $svg2.attr("viewBox", "0 0 1200 46");
-            }
+                if ($(window).width() <= maxWidth2) {
+                    // Change viewBox for smaller screens
+                    $svg.attr("viewBox", "0 0 250 45");
+                    $svg2.attr("viewBox", "0 0 250 44");
+                } else if ($(window).width() <= maxWidth4) { // Bah image
+                    $("#bah").attr("width", "250px")
+                    $("#div-bah").css({padding: "0", transform: "translateX(-15%)"})
+                } else if ($(window).width() <= maxWidth) {
+                    $svg.attr("viewBox", "0 0 500 45");
+                    $svg2.attr("viewBox", "0 0 500 46");
+                    $("#bah").attr("width", "400px")
+                } else if ($(window).width() <= maxWidth3) { // Bah image
+                    $("#bah").attr("width", "500px")
+                    $("#what-we-div-img").remove();
+                    $("#what-we-div-txt").css({margin: 0});
+                } else {
+                    $("#what-we-div-img").add();
+                    // Reset viewBox for larger screens
+                    $svg.attr("viewBox", "0 0 1200 45");
+                    $svg2.attr("viewBox", "0 0 1200 46");
+                }
             }
 
             // Run on page load
